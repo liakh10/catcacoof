@@ -189,7 +189,7 @@ dl.t dd.red{color:#d8281c} dl.t dd.blue{color:#1f7fd0}
     <div class="bar"><span>case_file.txt</span><i><b></b><b></b><b></b></i></div>
     <div class="face">
       <dl class="t">
-        <div><dt>Case number</dt><dd><span class="ca" id="ca">soon</span><span class="stamp" id="stamp">ON HOLD</span></dd></div>
+        <div><dt>Case number</dt><dd><span class="ca" id="ca">soon</span></dd></div>
         <div><dt>Ticker</dt><dd data-ticker>$CACOOF</dd></div>
         <div><dt>Line</dt><dd>Robinhood Chain &#183; Pons</dd></div>
       </dl>
@@ -233,8 +233,8 @@ dl.t dd.red{color:#d8281c} dl.t dd.blue{color:#1f7fd0}
   sh.innerHTML = hr < 9 ? 'Lines open at nine. <b>He has been on since yesterday.</b>' : hr < 18 ? 'Agents are online. <b>None of them is his.</b>' : 'Lines are closed for the day. <b>He did not hang up.</b>';
 
   /* the case file */
-  var ca = document.getElementById('ca'), cp = document.getElementById('cp'), stamp = document.getElementById('stamp'), mc = document.getElementById('mc'), st = document.getElementById('st');
-  ca.textContent = HAS ? CA : 'soon'; if(HAS){ stamp.textContent = 'CONNECTED'; stamp.classList.add('ok'); mc.textContent = 'live'; st.textContent = 'LIVE'; }
+  var ca = document.getElementById('ca'), cp = document.getElementById('cp'), mc = document.getElementById('mc'), st = document.getElementById('st');
+  ca.textContent = HAS ? CA : 'soon'; if(HAS){ mc.textContent = 'live'; st.textContent = 'LIVE'; }
   document.getElementById('case').addEventListener('click', function(){ var old = cp.textContent; if(HAS){ if(navigator.clipboard) navigator.clipboard.writeText(CA); cp.textContent = 'Copied. Please hold.'; } else cp.textContent = 'No case number yet. Please hold.'; setTimeout(function(){ cp.textContent = old; }, 1400); });
 
   /* sightings */
